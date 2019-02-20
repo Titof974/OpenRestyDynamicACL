@@ -1,0 +1,9 @@
+version: '3'
+test-openresty:
+    container_name: openresty
+    image: openresty/openresty:1.13.6.2-2-bionic
+    ports:
+        - "86:80"
+    volumes:
+        - "./nginx/conf.d/:/etc/nginx/conf.d/"
+        - "./lua/:/lua/:z"
